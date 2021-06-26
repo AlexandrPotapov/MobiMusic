@@ -24,6 +24,18 @@ class TrackTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  func set(with track: Track, photos: [PhotoRecord]) {
+    
+    var photoRecord = PhotoRecord(name: "", url: URL(fileURLWithPath: ""))
+    for photo in photos {
+      if photo.name == track.coverUrl {
+        photoRecord = photo
+      }
+    }
+    let photoDetails = photoRecord
+    self.trackName?.text = track.name
+    self.albumImage?.image = photoDetails.image
+  }
 }
 
 

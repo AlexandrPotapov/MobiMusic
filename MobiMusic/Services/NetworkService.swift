@@ -18,7 +18,6 @@ class NetworkService: NetworkingProtocol {
     let url = url(with: allParams)
     let request = URLRequest(url: url)
     let task = createDataTask(from: request, completion: completion)
-    print(url)
     task.resume()
   }
   

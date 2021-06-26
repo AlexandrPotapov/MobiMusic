@@ -7,41 +7,20 @@
 
 import Foundation
 
-class AlbumsDictionary {
-    var album: String
-    var tracks: [Track]
-    
-    init(album: String, tracks: [Track]) {
-        self.album = album
-        self.tracks = tracks
-    }
-}
-
-protocol AlbumListViewProtocol: AnyObject {
-  func reloadData()
-  func loadAlbumImage(withUrl imageUrl: String, name: String)
-}
-
-protocol AlbumListPresenterProtocol {
-  var albums: [String: [Track]] { get }
-  var tracks: [Track] { get }
-  var albumsDictionary: [AlbumsDictionary] { get }
-  func getAlbums()
-  func getTracks(with id: String)
-  func album(atSection section: Int) -> String?
-  func track(atIndex indexPath: IndexPath) -> Track?
-}
-
 class AlbumListPresenter: AlbumListPresenterProtocol {
+  
+  var photos = [PhotoRecord]()
+  
   
   weak var view: AlbumListViewProtocol?
   
   var albums = [String: [Track]]()
   var albumsDictionary = [AlbumsDictionary]()
   var albumsName = [String]()
-  
   var tracks = [Track]()
   
+  var imageProvider: ImageProvaiderProtocol!
+
   private var page = 1
   private var albumsId = [String]()
   private let limit = 5
@@ -52,6 +31,15 @@ class AlbumListPresenter: AlbumListPresenterProtocol {
   required init(view: AlbumListViewProtocol, dataFetcher: DataFetcher) {
     self.view = view
     self.dataFetcher = dataFetcher
+  }
+  
+  private func addPhotoRecord(coverUrl: String) {
+    let url = URL(string: coverUrl)
+    if let url = url {
+      let photoRecord = PhotoRecord(name: coverUrl, url: url)
+      imageProvider.photos.append(photoRecord)
+      photos = imageProvider.photos
+    }
   }
   
   func getAlbums() {
@@ -76,16 +64,22 @@ class AlbumListPresenter: AlbumListPresenterProtocol {
         }
         guard let nameAlbum = response.collection.album.first?.value.name else { return }
         guard let coverUrl = response.collection.track.first?.value.coverUrl else { return }
-        self?.view?.loadAlbumImage(withUrl: coverUrl, name: coverUrl)
+        
+        self?.addPhotoRecord(coverUrl: coverUrl)
 
         var tracks = [Track]()
         for (_, track) in response.collection.track {
-
           tracks.append(track)
         }
         self?.albumsDictionary.append(AlbumsDictionary(album: nameAlbum, tracks: tracks))
+        self?.view?.hideSpinners()
         self?.view?.reloadData()
       }
+  }
+  
+  func loadNextAlbums() {
+    page += 1
+    getAlbums()
   }
   
   func album(atSection section: Int) -> String? {
@@ -103,5 +97,31 @@ class AlbumListPresenter: AlbumListPresenterProtocol {
     } else {
       return nil
     }
+  }
+  
+  func reloadRows(at indexPath: IndexPath) {
+    view?.reloadRows(at: indexPath)
+  }
+  
+  // MARK: - operation management
+  
+  func startOperations(for photoDetails: PhotoRecord, at indexPath: IndexPath) {
+    imageProvider.startOperations(for: photoDetails, at: indexPath)
+  }
+  
+  func resumeAllOperations() {
+    imageProvider.resumeAllOperations()
+  }
+  
+  func loadImagesForOnscreenCells(pathsArray: [IndexPath]?) {
+    imageProvider.loadImagesForOnscreenCells(pathsArray: pathsArray)
+  }
+  
+  func startDownload(for photoRecord: PhotoRecord, at indexPath: IndexPath) {
+    imageProvider.startDownload(for: photoRecord, at: indexPath)
+  }
+  
+  func suspendAllOperations() {
+    imageProvider.suspendAllOperations()
   }
 }
