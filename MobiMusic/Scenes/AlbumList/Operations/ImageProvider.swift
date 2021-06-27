@@ -7,12 +7,21 @@
 
 import Foundation
 
+protocol ImageProvaiderProtocol {
+  var covers: [CoverRecord] { get set }
+  func suspendAllOperations()
+  func resumeAllOperations()
+  func loadImagesForOnscreenCells(pathsArray: [IndexPath]?)
+  func startOperations(for photoRecord: CoverRecord, at indexPath: IndexPath)
+  func startDownload(for photoRecord: CoverRecord, at indexPath: IndexPath)
+}
+
 class ImageProvider: ImageProvaiderProtocol {
-  var photos: [PhotoRecord] = []
+  var covers: [CoverRecord] = []
   let pendingOperations = PendingOperations()
   
   weak var presenter: AlbumListPresenterProtocol!
-
+  
   init(presenter: AlbumListPresenterProtocol) {
     self.presenter = presenter
   }
@@ -44,13 +53,13 @@ class ImageProvider: ImageProvaiderProtocol {
       }
       
       for indexPath in toBeStarted {
-        let recordToProcess = photos[indexPath.section]
+        let recordToProcess = covers[indexPath.section]
         startOperations(for: recordToProcess, at: indexPath)
       }
     }
   }
   
-  func startOperations(for photoRecord: PhotoRecord, at indexPath: IndexPath) {
+  func startOperations(for photoRecord: CoverRecord, at indexPath: IndexPath) {
     switch (photoRecord.state) {
     case .new:
       startDownload(for: photoRecord, at: indexPath)
@@ -59,7 +68,7 @@ class ImageProvider: ImageProvaiderProtocol {
     }
   }
   
-  func startDownload(for photoRecord: PhotoRecord, at indexPath: IndexPath) {
+  func startDownload(for photoRecord: CoverRecord, at indexPath: IndexPath) {
     guard pendingOperations.downloadsInProgress[indexPath] == nil else {
       return
     }

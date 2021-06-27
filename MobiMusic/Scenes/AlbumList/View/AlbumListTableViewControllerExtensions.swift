@@ -46,3 +46,10 @@ extension AlbumListTableViewController {
     }
   }
 }
+
+// MARK: Routing
+extension AlbumListTableViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    presenter.router.prepare(for: segue, sender: sender)
+}
+}

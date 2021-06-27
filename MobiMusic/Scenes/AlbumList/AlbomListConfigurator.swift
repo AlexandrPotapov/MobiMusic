@@ -7,9 +7,14 @@
 
 import Foundation
 
+protocol AlbumListConfiguratorProtocol {
+  func configure(with viewController: AlbumListTableViewController, dataFetcher: DataFetcher)
+}
+
 class AlbumListConfigurator: AlbumListConfiguratorProtocol {
   func configure(with viewController: AlbumListTableViewController, dataFetcher: DataFetcher) {
-    let presenter = AlbumListPresenter(view: viewController, dataFetcher: dataFetcher)
+    let router = AlbumListRouter(viewController: viewController)
+    let presenter = AlbumListPresenter(view: viewController, router: router, dataFetcher: dataFetcher)
     let imageProvider = ImageProvider(presenter: presenter)
     presenter.imageProvider = imageProvider
     viewController.presenter = presenter

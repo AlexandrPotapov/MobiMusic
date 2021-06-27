@@ -10,13 +10,19 @@
 		1F49AE88268746D9001F0DE8 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49AE87268746D9001F0DE8 /* SpinnerView.swift */; };
 		1F49AE8C26877319001F0DE8 /* AlbumsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49AE8B26877319001F0DE8 /* AlbumsDictionary.swift */; };
 		1F49AE8E2687760E001F0DE8 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49AE8D2687760E001F0DE8 /* ImageProvider.swift */; };
-		1F49AE902687A4BB001F0DE8 /* AlbumListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49AE8F2687A4BB001F0DE8 /* AlbumListProtocols.swift */; };
 		1F49AE922687ACA2001F0DE8 /* AlbumListTableViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49AE912687ACA2001F0DE8 /* AlbumListTableViewControllerExtensions.swift */; };
 		1F4E29072684665F0003C1CA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E29062684665F0003C1CA /* API.swift */; };
 		1F4E2909268466730003C1CA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E2908268466730003C1CA /* NetworkService.swift */; };
 		1F4E290B268466810003C1CA /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E290A268466810003C1CA /* NetworkDataFetcher.swift */; };
 		1F4E290E268466D60003C1CA /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E290D268466D60003C1CA /* Album.swift */; };
-		1F4E2915268467920003C1CA /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E2914268467920003C1CA /* CardViewController.swift */; };
+		1F578C5126888CE30019000A /* TrackCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F578C5026888CE30019000A /* TrackCardViewController.swift */; };
+		1F578C53268899050019000A /* TrackCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F578C52268899050019000A /* TrackCardPresenter.swift */; };
+		1F578C55268899320019000A /* TrackCardConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F578C54268899320019000A /* TrackCardConfigurator.swift */; };
+		1F578C5B26889AF50019000A /* TrackCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F578C5A26889AF50019000A /* TrackCardViewModel.swift */; };
+		1F578C5E2688A80A0019000A /* A Kiss MS-B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F578C5C2688A8090019000A /* A Kiss MS-B.mp3 */; };
+		1F578C5F2688A80A0019000A /* A Kiss MS-A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F578C5D2688A80A0019000A /* A Kiss MS-A.mp3 */; };
+		1F578C652688C19E0019000A /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F578C642688C19D0019000A /* AudioPlayer.swift */; };
+		1F578C672688DE6C0019000A /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F578C662688DE6C0019000A /* RouterView.swift */; };
 		1F62A9E226847D2A0080E949 /* AlbumListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F62A9E126847D2A0080E949 /* AlbumListTableViewController.swift */; };
 		1F62A9E526847D570080E949 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F62A9E326847D570080E949 /* TrackTableViewCell.swift */; };
 		1F62A9E626847D570080E949 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F62A9E426847D570080E949 /* TrackTableViewCell.xib */; };
@@ -35,13 +41,19 @@
 		1F49AE87268746D9001F0DE8 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		1F49AE8B26877319001F0DE8 /* AlbumsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDictionary.swift; sourceTree = "<group>"; };
 		1F49AE8D2687760E001F0DE8 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
-		1F49AE8F2687A4BB001F0DE8 /* AlbumListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListProtocols.swift; sourceTree = "<group>"; };
 		1F49AE912687ACA2001F0DE8 /* AlbumListTableViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListTableViewControllerExtensions.swift; sourceTree = "<group>"; };
 		1F4E29062684665F0003C1CA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1F4E2908268466730003C1CA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1F4E290A268466810003C1CA /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		1F4E290D268466D60003C1CA /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		1F4E2914268467920003C1CA /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		1F578C5026888CE30019000A /* TrackCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCardViewController.swift; sourceTree = "<group>"; };
+		1F578C52268899050019000A /* TrackCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCardPresenter.swift; sourceTree = "<group>"; };
+		1F578C54268899320019000A /* TrackCardConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCardConfigurator.swift; sourceTree = "<group>"; };
+		1F578C5A26889AF50019000A /* TrackCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCardViewModel.swift; sourceTree = "<group>"; };
+		1F578C5C2688A8090019000A /* A Kiss MS-B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "A Kiss MS-B.mp3"; sourceTree = "<group>"; };
+		1F578C5D2688A80A0019000A /* A Kiss MS-A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "A Kiss MS-A.mp3"; sourceTree = "<group>"; };
+		1F578C642688C19D0019000A /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		1F578C662688DE6C0019000A /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 		1F62A9E126847D2A0080E949 /* AlbumListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListTableViewController.swift; sourceTree = "<group>"; };
 		1F62A9E326847D570080E949 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		1F62A9E426847D570080E949 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
@@ -119,27 +131,25 @@
 		1F4E2905268466480003C1CA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1F4E29062684665F0003C1CA /* API.swift */,
-				1F4E2908268466730003C1CA /* NetworkService.swift */,
-				1F4E290A268466810003C1CA /* NetworkDataFetcher.swift */,
+				1F578C6826890F7B0019000A /* Networking */,
+				1F578C642688C19D0019000A /* AudioPlayer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		1F4E290C268466B80003C1CA /* Model */ = {
+		1F4E290C268466B80003C1CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1F4E290D268466D60003C1CA /* Album.swift */,
 				1F49AE8B26877319001F0DE8 /* AlbumsDictionary.swift */,
+				1F578C5A26889AF50019000A /* TrackCardViewModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1F4E290F268467160003C1CA /* AlbumList */ = {
 			isa = PBXGroup;
 			children = (
-				1F49AE8F2687A4BB001F0DE8 /* AlbumListProtocols.swift */,
-				1F4E290C268466B80003C1CA /* Model */,
 				1F49AE932687AD95001F0DE8 /* View */,
 				1F49AE942687ADAF001F0DE8 /* Presenter */,
 				1F49AE952687AE83001F0DE8 /* Operations */,
@@ -161,9 +171,30 @@
 		1F4E2913268467490003C1CA /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				1F4E2914268467920003C1CA /* CardViewController.swift */,
+				1F578C5026888CE30019000A /* TrackCardViewController.swift */,
+				1F578C52268899050019000A /* TrackCardPresenter.swift */,
+				1F578C54268899320019000A /* TrackCardConfigurator.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		1F578C6826890F7B0019000A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1F4E29062684665F0003C1CA /* API.swift */,
+				1F4E2908268466730003C1CA /* NetworkService.swift */,
+				1F4E290A268466810003C1CA /* NetworkDataFetcher.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1F578C692689104C0019000A /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1F578C5D2688A80A0019000A /* A Kiss MS-A.mp3 */,
+				1F578C5C2688A8090019000A /* A Kiss MS-B.mp3 */,
+			);
+			path = AudioFiles;
 			sourceTree = "<group>";
 		};
 		1F9A35E02683AA780035D6A1 = {
@@ -185,11 +216,14 @@
 		1F9A35EB2683AA780035D6A1 /* MobiMusic */ = {
 			isa = PBXGroup;
 			children = (
+				1F578C692689104C0019000A /* AudioFiles */,
+				1F4E290C268466B80003C1CA /* Models */,
 				1F4E2912268467380003C1CA /* Scenes */,
 				1F4E2905268466480003C1CA /* Services */,
 				1F49AE972687B13A001F0DE8 /* Supports */,
 				1F9A35F22683AA780035D6A1 /* Main.storyboard */,
 				1F9A35FA2683AA7B0035D6A1 /* Info.plist */,
+				1F578C662688DE6C0019000A /* RouterView.swift */,
 			);
 			path = MobiMusic;
 			sourceTree = "<group>";
@@ -262,8 +296,10 @@
 			files = (
 				1F9A35F92683AA7B0035D6A1 /* LaunchScreen.storyboard in Resources */,
 				1F9A35F62683AA7B0035D6A1 /* Assets.xcassets in Resources */,
+				1F578C5F2688A80A0019000A /* A Kiss MS-A.mp3 in Resources */,
 				1F9A35F42683AA780035D6A1 /* Main.storyboard in Resources */,
 				1F62A9E626847D570080E949 /* TrackTableViewCell.xib in Resources */,
+				1F578C5E2688A80A0019000A /* A Kiss MS-B.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,23 +310,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F578C53268899050019000A /* TrackCardPresenter.swift in Sources */,
+				1F578C5126888CE30019000A /* TrackCardViewController.swift in Sources */,
 				1F4E290B268466810003C1CA /* NetworkDataFetcher.swift in Sources */,
 				1F9A35ED2683AA780035D6A1 /* AppDelegate.swift in Sources */,
 				1F9A35EF2683AA780035D6A1 /* SceneDelegate.swift in Sources */,
+				1F578C652688C19E0019000A /* AudioPlayer.swift in Sources */,
+				1F578C5B26889AF50019000A /* TrackCardViewModel.swift in Sources */,
 				1F49AE8C26877319001F0DE8 /* AlbumsDictionary.swift in Sources */,
 				1F49AE88268746D9001F0DE8 /* SpinnerView.swift in Sources */,
-				1F4E2915268467920003C1CA /* CardViewController.swift in Sources */,
 				1F720BBB2684A55F00D337DA /* AlbumListPresenter.swift in Sources */,
 				1F720BC32685173200D337DA /* PhotoOperations.swift in Sources */,
 				1F49AE922687ACA2001F0DE8 /* AlbumListTableViewControllerExtensions.swift in Sources */,
 				1F49AE8E2687760E001F0DE8 /* ImageProvider.swift in Sources */,
-				1F49AE902687A4BB001F0DE8 /* AlbumListProtocols.swift in Sources */,
+				1F578C55268899320019000A /* TrackCardConfigurator.swift in Sources */,
 				1F720BBD2684A56F00D337DA /* AlbomListConfigurator.swift in Sources */,
 				1F720BBF2684A57E00D337DA /* AlbumListRouter.swift in Sources */,
 				1F62A9E526847D570080E949 /* TrackTableViewCell.swift in Sources */,
 				1F4E2909268466730003C1CA /* NetworkService.swift in Sources */,
 				1F62A9E226847D2A0080E949 /* AlbumListTableViewController.swift in Sources */,
 				1F4E29072684665F0003C1CA /* API.swift in Sources */,
+				1F578C672688DE6C0019000A /* RouterView.swift in Sources */,
 				1F4E290E268466D60003C1CA /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,11 +7,19 @@
 
 import UIKit
 
+protocol AlbumListViewProtocol: AnyObject {
+  func reloadData()
+  func hideSpinners()
+  func reloadRows(at indexPath: IndexPath)
+  var selfToTrackCardSegueName: String { get }
+}
+
 class AlbumListTableViewController: UITableViewController {
   
   var presenter: AlbumListPresenterProtocol!
   var header = SpinnerView()
   var footer = SpinnerView()
+  let selfToTrackCardSegueName = "TrackCard"
   
   private let dataFetcher = NetworkDataFetcher()
   private let configurator = AlbumListConfigurator()
@@ -27,6 +35,7 @@ class AlbumListTableViewController: UITableViewController {
       header.showLoader()
       tableView.tableHeaderView = header
       tableView.tableFooterView = footer
+      
     }
 
     // MARK: - Table view data source
@@ -51,8 +60,8 @@ class AlbumListTableViewController: UITableViewController {
       }
       let indicator = cell.accessoryView as! UIActivityIndicatorView
       
-      var photoRecord = PhotoRecord(name: "", url: URL(fileURLWithPath: ""))
-      for photo in presenter.photos {
+      var photoRecord = CoverRecord(name: "", url: URL(fileURLWithPath: ""))
+      for photo in presenter.covers {
         if photo.name == track.coverUrl {
           photoRecord = photo
         }
@@ -75,6 +84,10 @@ class AlbumListTableViewController: UITableViewController {
       }
         return cell
     }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    presenter.didSelect(at: indexPath)
+  }
 
   
   // MARK: Setup rows and sections
@@ -99,5 +112,3 @@ class AlbumListTableViewController: UITableViewController {
       return 200
   }
 }
-
-

@@ -4,14 +4,14 @@ import Foundation
 import UIKit
 
 // This enum contains all the possible states a photo record can be in
-enum PhotoRecordState {
+enum CoverRecordState {
   case new, downloaded, failed
 }
 
-class PhotoRecord {
+class CoverRecord {
   let name: String
   let url: URL
-  var state = PhotoRecordState.new
+  var state = CoverRecordState.new
   var image = UIImage(named: "Placeholder")
   
   init(name:String, url:URL) {
@@ -32,11 +32,11 @@ class PendingOperations {
 
 class ImageDownloader: Operation {
   //1
-  let photoRecord: PhotoRecord
+  let coverRecord: CoverRecord
   
   //2
-  init(_ photoRecord: PhotoRecord) {
-    self.photoRecord = photoRecord
+  init(_ photoRecord: CoverRecord) {
+    self.coverRecord = photoRecord
   }
   
   //3
@@ -47,7 +47,7 @@ class ImageDownloader: Operation {
     }
     
     //5
-    guard let imageData = try? Data(contentsOf: photoRecord.url) else { return }
+    guard let imageData = try? Data(contentsOf: coverRecord.url) else { return }
     
     //6
     if isCancelled {
@@ -56,11 +56,11 @@ class ImageDownloader: Operation {
     
     //7
     if !imageData.isEmpty {
-      photoRecord.image = UIImage(data:imageData)
-      photoRecord.state = .downloaded
+      coverRecord.image = UIImage(data:imageData)
+      coverRecord.state = .downloaded
     } else {
-      photoRecord.state = .failed
-      photoRecord.image = UIImage(named: "Failed")
+      coverRecord.state = .failed
+      coverRecord.image = UIImage(named: "Failed")
     }
   }
 }
