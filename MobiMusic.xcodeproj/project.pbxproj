@@ -30,6 +30,9 @@
 		1F720BBD2684A56F00D337DA /* AlbomListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F720BBC2684A56F00D337DA /* AlbomListConfigurator.swift */; };
 		1F720BBF2684A57E00D337DA /* AlbumListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F720BBE2684A57E00D337DA /* AlbumListRouter.swift */; };
 		1F720BC32685173200D337DA /* PhotoOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F720BC22685173200D337DA /* PhotoOperations.swift */; };
+		1F7CDFD2268CF067005C2EED /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CDFD1268CF067005C2EED /* SplashViewController.swift */; };
+		1F7CDFD4268CF17B005C2EED /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CDFD3268CF17B005C2EED /* SplashPresenter.swift */; };
+		1F7CDFD6268CF1B5005C2EED /* SplashAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CDFD5268CF1B5005C2EED /* SplashAnimator.swift */; };
 		1F9A35ED2683AA780035D6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A35EC2683AA780035D6A1 /* AppDelegate.swift */; };
 		1F9A35EF2683AA780035D6A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A35EE2683AA780035D6A1 /* SceneDelegate.swift */; };
 		1F9A35F42683AA780035D6A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A35F22683AA780035D6A1 /* Main.storyboard */; };
@@ -61,6 +64,9 @@
 		1F720BBC2684A56F00D337DA /* AlbomListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomListConfigurator.swift; sourceTree = "<group>"; };
 		1F720BBE2684A57E00D337DA /* AlbumListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListRouter.swift; sourceTree = "<group>"; };
 		1F720BC22685173200D337DA /* PhotoOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoOperations.swift; sourceTree = "<group>"; };
+		1F7CDFD1268CF067005C2EED /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1F7CDFD3268CF17B005C2EED /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		1F7CDFD5268CF1B5005C2EED /* SplashAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimator.swift; sourceTree = "<group>"; };
 		1F9A35E92683AA780035D6A1 /* MobiMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9A35EC2683AA780035D6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9A35EE2683AA780035D6A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		1F4E2912268467380003C1CA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1F7CDFD0268CF047005C2EED /* SplashScreen */,
 				1F4E290F268467160003C1CA /* AlbumList */,
 				1F4E2913268467490003C1CA /* Card */,
 			);
@@ -195,6 +202,16 @@
 				1F578C5C2688A8090019000A /* A Kiss MS-B.mp3 */,
 			);
 			path = AudioFiles;
+			sourceTree = "<group>";
+		};
+		1F7CDFD0268CF047005C2EED /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1F7CDFD1268CF067005C2EED /* SplashViewController.swift */,
+				1F7CDFD3268CF17B005C2EED /* SplashPresenter.swift */,
+				1F7CDFD5268CF1B5005C2EED /* SplashAnimator.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		1F9A35E02683AA780035D6A1 = {
@@ -315,11 +332,14 @@
 				1F4E290B268466810003C1CA /* NetworkDataFetcher.swift in Sources */,
 				1F9A35ED2683AA780035D6A1 /* AppDelegate.swift in Sources */,
 				1F9A35EF2683AA780035D6A1 /* SceneDelegate.swift in Sources */,
+				1F7CDFD2268CF067005C2EED /* SplashViewController.swift in Sources */,
+				1F7CDFD6268CF1B5005C2EED /* SplashAnimator.swift in Sources */,
 				1F578C652688C19E0019000A /* AudioPlayer.swift in Sources */,
 				1F578C5B26889AF50019000A /* TrackCardViewModel.swift in Sources */,
 				1F49AE8C26877319001F0DE8 /* AlbumsDictionary.swift in Sources */,
 				1F49AE88268746D9001F0DE8 /* SpinnerView.swift in Sources */,
 				1F720BBB2684A55F00D337DA /* AlbumListPresenter.swift in Sources */,
+				1F7CDFD4268CF17B005C2EED /* SplashPresenter.swift in Sources */,
 				1F720BC32685173200D337DA /* PhotoOperations.swift in Sources */,
 				1F49AE922687ACA2001F0DE8 /* AlbumListTableViewControllerExtensions.swift in Sources */,
 				1F49AE8E2687760E001F0DE8 /* ImageProvider.swift in Sources */,

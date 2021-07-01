@@ -23,7 +23,8 @@ class TrackCardViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     configurator.configure(with: self)
     presenter.viewDidLoad()
   }
@@ -62,10 +63,17 @@ extension TrackCardViewController: TrackCardViewProtocol {
   
   func changeButtonLabelText(isPlaying: Bool) {
     if isPlaying {
-      playOrPauseButton.setTitle("Pause", for: .normal)
+      playOrPauseButton.setImage(UIImage(named: "pause"), for: .normal)
     } else {
-      playOrPauseButton.setTitle("Play", for: .normal)
+      playOrPauseButton.setImage(UIImage(named: "play"), for: .normal)
     }
   }
   
+}
+
+extension TrackCardViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+      self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        return true
+    }
 }

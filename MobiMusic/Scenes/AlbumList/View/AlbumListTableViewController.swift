@@ -29,6 +29,7 @@ class AlbumListTableViewController: UITableViewController {
       let stockCell = UINib(nibName: "TrackTableViewCell", bundle: nil)
       tableView.register(stockCell , forCellReuseIdentifier: TrackTableViewCell.reuseId)
 
+      
       configurator.configure(with: self, dataFetcher: dataFetcher)
       presenter.getAlbums()
 
@@ -93,7 +94,7 @@ class AlbumListTableViewController: UITableViewController {
   // MARK: Setup rows and sections
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
       let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
-    view.backgroundColor = .white
+    view.backgroundColor = .systemTeal
       
       let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 60))
       lbl.font = UIFont.systemFont(ofSize: 20)

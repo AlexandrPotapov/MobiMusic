@@ -10,13 +10,24 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
-
+//  private var splashPresenter: SplashPresenterDescription? = SplashPresenter()
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    guard let _ = (scene as? UIWindowScene) else { return }
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+    
+    var splashPresenter: SplashPresenterDescription? = SplashPresenter(windowScene: windowScene)
+
+    splashPresenter?.present()
+    
+    let delay: TimeInterval = 2
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+      splashPresenter?.dismiss { 
+           splashPresenter = nil
+        }
+    }
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
